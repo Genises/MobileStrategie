@@ -1,0 +1,3 @@
+Collecting Ressource -if over maxCarry-> Returning Ressource 
+
+Returning Ressource -if empty again-> Collecting Ressource
