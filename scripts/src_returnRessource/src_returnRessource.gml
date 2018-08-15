@@ -1,12 +1,13 @@
-if(point_distance(self.home_coordinates[0],self.home_coordinates[1], self.x, self.y) >= global.distance_epsilon ){
-	move_towards_point(self.home_coordinates[0],self.home_coordinates[1], global.vill_movespeed);
-}else{
-	self.image_speed=0;
-	self.speed = 0;
-	self.carrying -= global.collectionSpeed;
-	if(self.carrying <= 0){
-		self.carrying = 0;
-		self.myState = states.idle; 
+//Move home or unload ressources
+//show_debug_message("I'm returning stuff")
+if(!src_walkToPosition(home_instance.x,home_instance.y)){
+	carrying -= global.collectionSpeed;
+	with(home_instance){
+		self.wood += global.collectionSpeed;
+	}
+	if(carrying <= 0){
+		carrying = 0;
+		myState = states.idle; 
 	}
 }
  

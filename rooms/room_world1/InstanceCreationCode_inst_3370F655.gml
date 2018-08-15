@@ -1,0 +1,1 @@
+owner = "player2";
